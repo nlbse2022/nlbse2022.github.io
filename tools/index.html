@@ -95,139 +95,343 @@
             </div>
             
             
-<div class="container">
-  <div class="content-center">
-    <h1 class="title">NLBSE 2022</h1>
-    <div class="text-center">
-       <h5>The 1th Intl. Workshop on Natural Language-based Software Engineering</h5>
-<h5>TBD</h5>
-<a href="" class="btn btn-primary btn-icon btn-round"><i class="fa fa-facebook-square"></i></a><a href="" class="btn btn-primary btn-icon btn-round"> <i class="fa fa-twitter"></i></a>
- 
-    </div>
-  </div>
-</div>
+    <div class="container">
+      <div class="content-center">
+        <h1 class="title">NLBSE 2022</h1>
+        <div class="text-center">
+           <h5>The 1th Intl. Workshop on Natural Language-based Software Engineering</h5>
+    <h5>TBD</h5>
+    <a href="" class="btn btn-primary btn-icon btn-round"><i class="fa fa-facebook-square"></i></a><a href="" class="btn btn-primary btn-icon btn-round"> <i class="fa fa-twitter"></i></a>
 
-            
         </div>
-        <div class="section">
-            <div class="container">
-              
-            
-<!--<div class="row">-->
-<!--  <div class="col-md-8 ml-auto mr-auto text-left">-->
-<!--  -->
-<!--<h2 class="title">Tool Competition</h2>-->
+      </div>
+    </div>
 
-<!--<p>This year as well we are pleased to announce the nineth edition of the unit testing tool competition. The competition has the goal to experiment with testing tools for a diversified set of traditional and emerging systems and domains.</p>-->
 
-<!--<p><strong>Java tool competition</strong>: As for recent years, we invite researchers to participate in the competition with their unit test generation tool for <strong><em>Java</em></strong>. Tools will be evaluated against a benchmark with respect to code coverage and mutation score.</p>-->
+            </div>
+            <div class="section">
+                <div class="container">
 
-<!--<p style="text-align: center;">-->
-<!--  <img src="../img/java.png" title="Java test example" alt="Java test example" />-->
-<!--</p>-->
 
-<!--<p><strong>Cyber-physical systems (CPS) testing competition</strong>: In addition to the traditional Java tool competition, we also organize a CPS testing competition on self-driving cars simulation environments. Specifically, in collaboration with the <a href="https://beamng.gmbh/research/ " target="_blank">BeamNG research team</a>, this competition focuses on the generation of scenarios using BeamNG self-driving cars simulator.-->
-<!--</p>-->
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto text-left">
 
-<!--<p style="text-align: center;">-->
-<!--  <img src="../img/beam-1.png" alt="Beam-NG Visual 1" title="Beam-NG Visual 1" /><br />-->
-<!--  <img src="../img/beam-2.png" alt="Beam-NG Visual 2" title="Beam-NG Visual 2" />-->
-<!--</p>-->
+    <h2 class="title">Tool Competition</h2>
+          <h3>Introduction</h3>
+          <p>Software maintenance involves tasks for mitigating potential defects in the code, as well as for evolving it according to the users' emerging needs. Thus, it is crucial for the success of software projects. Issue tracking systems are tools to support these tasks by providing facilities to efficiently signal, manage, and address tickets or potential problems arising in software systems. In this context, software developers are required to timely react to issues reported in issue trackers and solve such issues by investing the lowest possible effort, to keep the costs related to software maintenance low. However, especially in popular projects, tens or hundreds of issues are reported daily. This complicates the issues management activities, resulting in heavier workloads for developers.</p>
 
-<!--<p><strong>For future editions</strong> of the SBST Tool competition (e.g., from 2022) we foresee the addition of a further "Python testing tool competition" where: -->
-<!--  <ul>-->
-<!--    <li>an infrastructure will be provided to generate the tools</li>-->
-<!--    <li>it is conducted in an evaluation setting similar to the one performed for the traditional Java testing tool competition</li>-->
-<!--  </ul>-->
-<!--</p>-->
+          <p>In projects hosted on GitHub, issue submitters report new issues by simply providing a title and an optional description of the issue. As issues of different types (e.g., asking questions, proposing features, signaling bugs) and quality could be submitted, GitHub also offers a customizable labeling system that can be used by developers to tag issue reports (e.g., by specifying the issue category or the related development tasks). Such labeling has positive effects on issues processing, making it easier for their management and prioritization. More specifically, labels assigned to issues help to classify and filter the reports, allowing more efficient issue handling processes. However, the manual labeling of issues may be labor-intensive, error-prone and time-consuming for project managers and, for this reason, labels are barely used on GitHub.</p>
 
-<!--<h3>How to participate in the two competitions?</h3>-->
+          <p>We believe that the availability of accurate tools in this field is becoming increasingly necessary to significantly improve the processes of issue management and prioritization. The competition will be on issue report classification, a well-known application of NLP in SE.</p>
 
-<!--<h4>Java tool competition:</h4>-->
 
-<!--<p>The infrastructure concerning the Java tool competition is available on GitHub and can also be tried using Docker: <a href="https://github.com/JUnitContest/junitcontest" target="_blank">https://github.com/JUnitContest/junitcontest</a>. It is important to note that some changes are expected to the infrastructure during the end of 2020 and during the beginning of 2021.</p>-->
+          <h3>In Brief</h3>
+          <ol>
+              <li>Participants train a multi-label classifier using the provided <a href="https://tickettagger.blob.core.windows.net/datasets/github-labels-top3-803k-train.tar.gz">training set</a>.</li>
+              <li>Submissions are evaluated on the provided <a href="https://tickettagger.blob.core.windows.net/datasets/github-labels-top3-803k-test.tar.gz">testset</a> and are ranked by highest <b>F<sub>1</sub></b> score.</li>
+              <li>Source code of training and evaluation pipeline must be open source for acceptance.</li>
+          </ol>
 
-<!--<p>To participate:-->
-<!--  <ul>-->
-<!--    <li>notify the organizers by sending an email to Sebastiano Panichella, Fiorella Zampetti Alessio Gambi and Vincenzo Riccio (<a href="mailto:fiorella.zampetti@unisannio.it, panc@zhaw.ch, alessio.gambi@uni-passau.de, vincenzo.riccio@usi.ch" target="_blank">fiorella.zampetti@unisannio.it, panc@zhaw.ch, alessio.gambi@uni-passau.de, vincenzo.riccio@usi.ch</a>).</li>-->
-<!--    <li>check out the contest infrastructure and make sure your tool works well within the infrastructure.</li>-->
-<!--  </ul>-->
-<!--</p>-->
+          <h3>Training</h3>
+          <p>You are provided a <a href="https://tickettagger.blob.core.windows.net/datasets/github-labels-top3-803k-train.tar.gz">training set</a> encompassing more than 700,000 labeled issue reports extracted from real open source projects.</p>
 
-<!--<h4>CPS testing competition</h4>-->
+          <p>Participants are free to select and transform variables from the training set as they please but no new sources can be be added. In other words, any input or feature used to create the classifier, must be derived from the provided training set. Participants may preprocess, sample, apply over/under-sampling, select a subset of the attributes, perform feature-engineering, split the training set into a model-finetuning validation set, etc.
 
-<!--<p>The infrastructure concerning the CPS tool competition can be found here: <a href="https://github.com/se2p/tool-competition-av" target="_blank">https://github.com/se2p/tool-competition-av</a>.</p>-->
+          <p> Each issue report contains the following metadata:
+          <ul>
+              <li>Label</li>
+              <li>Issue title</li>
+              <li>Issue body</li>
+              <li>Issue url</li>
+              <li>Repository url</li>
+              <li>Creation timestamp</li>
+              <li>Author association</li>
+          </ul>
+          <h3>Evaluation</h3>
+          <p>Submissions are evaluated based on their class-inference performance over the full provided <a href="https://tickettagger.blob.core.windows.net/datasets/github-labels-top3-803k-test.tar.gz">testset</a>. <b>Please note that rebalancing techniques cannot be applied to the testset.</b>
 
-<!--<p>To participate:-->
-<!--  <ul>-->
-<!--    <li>-->
-<!--      notify the organizers by sending an email Alessio Gambi, Vincenzo Riccio, Sebastiano Panichella, and Fiorella Zampetti  (<a href="mailto:alessio.gambi@uni-passau.de , vincenzo.riccio@usi.ch, fiorella.zampetti@unisannio.it, panc@zhaw.ch" target="_blank">alessio.gambi@uni-passau.de , vincenzo.riccio@usi.ch, fiorella.zampetti@unisannio.it, panc@zhaw.ch</a>).-->
-<!--    </li>-->
-<!--  </ul>-->
-<!--</p>-->
+          <p> Inference performance is measured using the <b>F<sub>1</sub></b> score over all classes. Every submission must provide:
+          <ul>
+              <li>A Precision <b>P<sub>c</sub></b> for each class <b>c</b></li>
+              <li>A Recall <b>R<sub>c</sub></b> , for each class <b>c</b></li>
+              <li>A <b>F<sub>1,c</sub></b> score as the harmonic mean between <b>P<sub>c</sub></b> and <b>R<sub>c</sub></b>, for each class <b>c</b></li>
+              <li>Precision <b>P</b>, micro-averaged <b>P<sub>c</sub></b> </li>
+              <li>Recall <b>R</b>, micro-averaged <b>R<sub>c</sub></b></li>
+              <li><b>F<sub>1</sub></b> score as the harmonic mean between <b>P</b> and <b>R</b></li>
+          </ul>
 
-<!--<h3>Important Dates</h3>-->
+          <p> where <b>TP<sub>c</sub></b>, <b>FP<sub>c</sub></b> and <b>FN<sub>c</sub></b> represent true positives, false positives and false negatives over a class <b>c</b>, respectively. Micro-averaging was chosen as the cross-class aggregation method due to the class imbalance present in the data.
 
-<!--<ul>-->
-<!--  <li>Tool submission: <strong>February 12</strong></li>-->
-<!--  <li>Benchmark results communicated to authors: <strong>March 2</strong></li>-->
-<!--  <li>Submission of camera-ready paper: <strong>March 12</strong></li>-->
-<!--</ul>-->
+          <p> Please note that whilst all of the above measures must be provided for acceptance, the submissions will <b>only</b> be ranked by their <b>F<sub>1</sub></b> score.
 
-<!--        <div class="section">-->
-<!--            <div class="container">-->
-<!--              -->
-            
-<!--<div class="row">-->
-<!--  <div class="col-md-8 ml-auto mr-auto text-left">-->
-<!--  -->
-<!--        <div class="section section-team text-center">-->
-<!--            <div class="container">-->
-<!--                <h3 class="subtitle">Organizing Committee</h3>-->
-<!--                <div class="team">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="team-player">-->
-<!--                                <img src="/img/sebastiano.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
-<!--                                <h4>Sebastiano Panichella</h4>-->
-<!--                                <p class="category text-primary">Zurich University of Applied Science (ZHAW)</p>-->
-<!--                                <a href="https://spanichella.github.io/" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+          <h3>Colab Notebook</h3>
+          <p>Colab notebooks provide a convenient format for publishing work and make it easier for readers to reproduce results. Colab provides interactive python runtimes which can be accessed from a browser environment. Colab requires no configuration, provides free access to GPUs and allows for easy sharing between collaborators.
+
+          <p>Participants can use cloud hosted infrastructure (recommended), connect to a local runtime or not use colab at all. We do not impose any constraints on the technologies used. You can read more about Colab <a href="https://colab.research.google.com/notebooks/intro.ipynb">here</a>. An example of a GPU-accelerated colab notebook can be found <a href="https://colab.research.google.com/notebooks/gpu.ipynb">here</a>.
+
+          <h2 class="title">Submission Template</h2>
+          <p>Participants are encouraged, but not required, to use the following code as a template for their submission. The example below trains a fastText model.
+          <pre><code>  import os
+  import time
+  import numpy as np
+  import pandas as pd
+  import seaborn as sns
+  import gensim
+  import sklearn.metrics
+  from tqdm.auto import tqdm</code></pre>
+          <pre><code>
+  # persistent file storage
+  # https://colab.research.google.com/notebooks/io.ipynb
+  from google.colab import drive
+  drive.mount('/content/drive')
+          </code>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).</pre>
+<!--          <pre>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).</pre>-->
+          <h3>Training</h3>
+          <pre><code>  # download the training set if it does not exist
+  if not os.path.isfile("github-labels-top3-803k-train.csv"):
+    !curl "https://tickettagger.blob.core.windows.net/datasets/github-labels-top3-803k-train.tar.gz" | tar -xz
+
+  trainset = pd.read_csv("github-labels-top3-803k-train.csv")</code>   trainset.head(5)
+    Unnamed: 0	                                   issue_url	        issue_label	issue_created_at	issue_closed_at	issue_comments	issue_author_association	repository_url	                        issue_title	                                        issue_body
+    0	0	https://api.github.com/repos/maded2/plotng/iss...	enhancement	2021-05-04T00:53:06Z	2021-05-15T03:16:51Z	1	NONE	        https://api.github.com/repos/maded2/plotng	        [Question] Multiple Servers, one UI	                Hi, thanks for your great work. Since I use m...
+    1	1	https://api.github.com/repos/djp952/pvr.rtlrad...	bug	        2021-05-03T03:34:10Z	2021-05-15T03:11:48Z	1	OWNER	        https://api.github.com/repos/djp952/pvr.rtlradio	Channel IDs are mucked up for Weather (WX) rad...	The logic to generate a channel ID from the fr...
+    2	2	https://api.github.com/repos/vchelaru/Gum/issu...	enhancement	2015-03-12T21:15:02Z	2021-05-15T03:31:27Z	1	COLLABORATOR	https://api.github.com/repos/vchelaru/Gum	        Allow dragging screens/components into folders	        I noticed you can create sub-folders by right-...
+    3	3	https://api.github.com/repos/vchelaru/Gum/issu...	enhancement	2015-03-18T02:24:48Z	2021-05-15T03:55:41Z	3	OWNER	        https://api.github.com/repos/vchelaru/Gum	        Allow dropping into parent	                        @bjorn said: For initial setup, it would be v...
+    4	4	https://api.github.com/repos/vchelaru/Gum/issu...	bug	        2015-03-12T21:17:16Z	2021-05-15T03:59:21Z	1	COLLABORATOR	https://api.github.com/repos/vchelaru/Gum	        Categories don't always appear in the same order	It's confusing that the categories are not alw...</pre>
+          <pre><code>  trainset.groupby("issue_label").size()</code>  issue_label
+   bug            361239
+   enhancement    299287
+   question        62373
+   dtype: int64</pre>
+          <pre><code>  def preprocess(row):
+      doc = ""
+      doc += str(row.issue_title)
+      doc += " "
+      doc += str(row.issue_body)
+      doc = gensim.parsing.preprocessing.strip_multiple_whitespaces(doc)
+      return doc</code></pre>
+          <pre><code>  # transform dataset into fasttext format
+  # https://fasttext.cc/docs/en/supervised-tutorial.html#getting-and-preparing-the-data
+
+  # rng used to split training set into fasttext hyperparameter finetuning validation set (2 of 9 parts)
+  random = np.random.default_rng(0)
+
+  with open("train.txt", "w") as train_f, open("valid.txt", "w") as valid_f:
+    for row in tqdm(trainset.itertuples(), desc="Transform to fastText format", total=len(trainset)):
+      doc = f"__label__{row.issue_label} {preprocess(row)}\n"
+      is_train = random.uniform() < 7/9
+      f = train_f if is_train else valid_f
+      f.write(doc)
+  !wc -l "valid.txt"
+  !wc -l "train.txt"
+  !head -n 10 "train.txt"
+          </code>   Transform to fastText format:
+   160535 valid.txt
+   562364 train.txt
+   __label__enhancement [Question] Multiple Servers, one UI Hi, thanks for your great work. Since I use multiple plotting machines, can I start 1 server on every machine and connect the same UI on my Desktop to multiple servers? This would be amazing.
+   __label__bug Channel IDs are mucked up for Weather (WX) radio channels The logic to generate a channel ID from the frequency is all kinds of wrong since the implementation of Weather (WX) radio. WX channels allow for three digits of the Kilohertz portion, the current channel ID only accommodates one digit here. This needs to be fixed for both Matrix and Leia.
+   __label__enhancement Allow dragging screens/components into folders I noticed you can create sub-folders by right-clicking on the Screens or Components tree view entries. Dragging a component or screen into a folder should move it there.
+   __label__enhancement Allow dropping into parent @bjorn said: For initial setup, it would be very nice if you could drop items directly into their parent, rather than setting their parent later via the dropdown. Of course, visual feedback will need to be given so that the user can pick a suitable drop location.
+   __label__bug Remote set-background-image prints never ending kitty-cmd{"ok":true} **Describe the bug** background_image works like a dream, but when I try to remotely change the image using `kitty @ set-background-image /path/to/file.png`, the image changes, but the terminal scrolls and endless stream of ``` $ kitty @ set-background-image /path/to/file.png "ok": true}^[\^[P@kitty-cmd{"ok": true}^[\^[P@kitty-cmd{"ok": true} ``` The same is true directly from the kitty terminal. However, using `kitty @ set-background-image none` removed the background image and does *not* stream text. **To Reproduce** Steps to reproduce the behavior: 1. Set `background_image` in kitty config 2. Open new kitty instance and see background image 3. run `kitty @ set-background-image /path/to/file.png` 4. See endless text stream until window eventually crashes from memory failure (many minutes later) **Expected behavior** Image simply changes w/o text stream **Environment details** OS: Chrome OS -- linux debian container neofetch: ``` _,met$$$$$gg. mwilson@penguin ,g$$$$$$$$$$$$$$$P. --------------- ,g$$P" """Y$$.". OS: Debian GNU/Linux 10 (buster) on Chrome OS x86_64 ,$$P' `$$$. Host: crosvm ',$$P ,ggs. `$$b: Kernel: 5.4.99-12983-g8b7876ab9f5e `d$$' ,$P"' . $$$ Uptime: 5 hours, 6 mins $$P d$' , $$P Packages: 1329 (dpkg), 5 (flatpak) $$: $$. - ,d$$' Shell: zsh 5.7.1 $$; Y$b._ _,d$P' Resolution: 2256x1504 Y$$. `.`"Y$$$$P"' Theme: CrosAdapta [GTK2/3] `$$b "-.__ Icons: CrosAdapta [GTK2/3] `Y$$ Terminal: kitty `Y$$. Terminal Font: kitty 0.20.2 (57b5e493a4) created by Kovid Goyal kitty 0.20.2 (57b5e493a4) created by Kovid Goyal `$$b. CPU: 06/8e (8) @ 2.112GHz `Y$$b. Memory: 11MiB / 6604MiB `"Y$b._ ``` kitty --debug-config ``` kitty 0.20.2 (57b5e493a4) created by Kovid Goyal Linux penguin 5.4.99-12983-g8b7876ab9f5e #1 SMP PREEMPT Sun Feb 21 11:49:12 PST 2021 x86_64 Debian GNU/Linux 10 \n \l Loaded config files: /home/mwilson/.config/kitty/kitty.conf Running under: X11 Config options different from defaults: allow_remote_control y background Color(red=12, green=17, blue=21) background_image < /path/to/file.png > color0 Color(red=46, green=52, blue=60) color1 Color(red=189, green=15, blue=47) color10 Color(red=73, green=233, blue=152) color11 Color(red=253, green=223, blue=110) color12 Color(red=42, green=139, blue=193) color13 Color(red=234, green=71, blue=39) color14 Color(red=160, green=182, blue=211) color2 Color(red=53, green=167, blue=112) color3 Color(red=251, green=148, blue=53) color4 Color(red=31, green=88, blue=114) color5 Color(red=189, green=37, blue=35) color6 Color(red=119, green=131, blue=151) color7 Color(red=255, green=255, blue=255) color8 Color(red=64, green=74, blue=85) color9 Color(red=189, green=15, blue=47) cursor Color(red=108, green=108, blue=108) foreground Color(red=255, green=255, blue=255) linux_display_server x11 selection_background Color(red=189, green=37, blue=35) selection_foreground Color(red=12, green=17, blue=21) tab_bar_edge 1 tab_bar_style powerline Added shortcuts: alt+ctrl+1 KeyAction(func='goto_tab', args=(1,)) alt+ctrl+2 KeyAction(func='goto_tab', args=(2,)) alt+ctrl+3 KeyAction(func='goto_tab', args=(3,)) alt+ctrl+4 KeyAction(func='goto_tab', args=(4,)) Changed shortcuts: shift+ctrl+enter KeyAction(func='launch', args=['--cwd=current'])``` ``` **Additional context** Reproduced with minimal config: ``` allow_remote_control y linux_display_server x11 ```
+   __label__enhancement Optionally include cursor in `get-text --ansi` **Is your feature request related to a problem? Please describe.** I'm working on a tool to display local terminal contents on a website (like [gotty](https://github.com/yudai/gotty), but more secure and optionally broadcasted through a server) by polling `get-text --ansi`. Here's a work in progress: https://copy.sh/stream-tty/. It works extremely well. The only missing bit is the cursor. **Describe the solution you'd like** I'd like for `get-text` to include the cursor styling via ansi codes. I don't care if it's enabled by default or if there is a new flag, but other users of `get-text` might have an opinion. **Describe alternatives you've considered** I've tested an alternative approach of a `get-cursor` api command. The main issue is latency: Every api call through the socket takes 70ms on my machine. Thus making two api calls (`get-text` and `get-cursor`) doubles the latency. Furthermore kitty already knows how to style the cursor and knows about line wrapping. One downside of this approach is that not all cursor styles are renderable using ansi codes (e.g. blinking or the unfocused cursor shape). That's not an issue for my use-case. **Additional context** Here's a screenshot of kitty and a browser rendering it side-by-side with only the cursor missing on the right: ![Screenshot_2021-05-14_21-01-01](https://user-images.githubusercontent.com/1816456/118345105-abc8fc00-b532-11eb-8078-ab8eb26672b1.png)
+   __label__enhancement [FEATURE REQUEST] Keep engine on if player dont turn it off Can you make so the engine will be on until player manually turn it off, even if the player ride off the vehicle? Thank you!
+   __label__enhancement Rewrite merge dictionaries In Python 3.9 or greater (see PEP-584): ```python x = {"a":1} y = {"b":2} z = x | y ``` In Python 3.5 or greater: ```python x = {"a":1} y = {"b":2} z = {**x, **y} ``` In Python 3.4 or greater: ```python x = {"a":1} y = {"b":2} z = dict(**x, **y) ```
+   __label__bug Retrieve text from image posts (and one more..) Firstly, thank you so much giving us this amazing scraper, I really appreciate your hard work that went into building this. Now to the issue: 1. Whenever facebook-scraper gets to a post like this, it returns empty _text, post_text, shared_text_ For example: `https://www.facebook.com/littlekiteskerala/posts/553818741897029` 2 . Also, sometimes number of shares returned are 0, and I am unable to figure out why? Cheers and stay safe
+   __label__enhancement Feature to extract post from a facebook story page rather than from account For example to extract from https://m.facebook.com/story.php?story_fbid=10165158992115725&id=153080620724 this page instead of scraping from DonaldTrump/posts
+          </pre>
+          <pre><code>  !pip install fasttext
+  import fasttext
+
+  # https://fasttext.cc/docs/en/python-module.html#train_supervised-parameters
+  model = fasttext.train_supervised("train.txt",
+                                   minCount=50,
+                                   autotuneValidationFile="valid.txt",
+                                   autotuneDuration=5*60)
+  model.quantize()
+  model.save_model(f"github-labels-{int(time.time())}.ftz")
+  model.save_model(f"drive/MyDrive/github-labels-{int(time.time())}.ftz")
+  model
+          </code>   Requirement already satisfied: fasttext in /usr/local/lib/python3.7/dist-packages (0.9.2)
+   Requirement already satisfied: setuptools>=0.7.0 in /usr/local/lib/python3.7/dist-packages (from fasttext) (57.4.0)
+   Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (from fasttext) (1.19.5)
+   Requirement already satisfied: pybind11>=2.2 in /usr/local/lib/python3.7/dist-packages (from fasttext) (2.8.1)</pre>
+
+          <h3>Evaluation</h3>
+          <pre><code>  if not os.path.isfile("github-labels-top3-803k-test.csv"):
+  !curl "https://tickettagger.blob.core.windows.net/datasets/github-labels-top3-803k-test.tar.gz" | tar -xz
+
+  testset = pd.read_csv("github-labels-top3-803k-test.csv")
+              testset</code>
+Unnamed: 0	issue_url	                                        issue_label	issue_created_at        issue_closed_at  issue_comments	issue_author_association  repository_url	                        issue_title	                  issue_body
+0	6	https://api.github.com/repos/dgalbraith/chocol...	bug	        2021-05-15T02:49:16Z	2021-05-15T03:01:29Z	0	OWNER	        https://api.github.com/repos/dgalbraith/chocol...	Amend FluidSynth package title	The package title for FluidSynth is incorrect....
+1	19	https://api.github.com/repos/Mds92/MD.Bootstra...	question	2019-07-19T14:09:56Z	2021-05-15T03:16:13Z	4	NONE	        https://api.github.com/repos/Mds92/MD.Bootstra...	خطا در استفاده برای bootstrap>4	سلام. وقت بخیر من از Bootstrap v4.2.1 و jquer...
+2	25	https://api.github.com/repos/Mds92/MD.Bootstra...	question	2019-06-30T13:16:07Z	2021-05-15T03:16:58Z	0	NONE	        https://api.github.com/repos/Mds92/MD.Bootstra...	استفاده از این تقویم در UpdatePanel	به منظور استفاده از این تقویم در UpdatePanel ...
+3	30	https://api.github.com/repos/Mds92/MD.Bootstra...	question	2019-07-24T20:13:26Z	2021-05-15T03:20:24Z	0	NONE	        https://api.github.com/repos/Mds92/MD.Bootstra...	مشکل در محو شدن input	سلام. من مشکلی که دارم اینه که وقتی تاریخ را ا...
+4	54	https://api.github.com/repos/austinhuang0131/b...	bug	        2021-05-05T16:51:13Z	2021-05-15T03:47:37Z	0	NONE	        https://api.github.com/repos/austinhuang0131/b...	[BUG] Location name doesn't fit	Some locations have pretty long names and if y...
+...	...	...	...	...	...	...	...	...	...	...
+80513	803384	https://api.github.com/repos/wmgeolab/geoBound...	bug	        2021-04-01T10:09:13Z	2021-04-01T10:42:23Z	1	CONTRIBUTOR	https://api.github.com/repos/wmgeolab/geoBound...	Release metadata file for authoritative source...	### What is the expected behavior? The [rel...
+80514	803392	https://api.github.com/repos/ARMmbed/mbedtls/i...	enhancement	2021-01-14T16:36:56Z	2021-04-01T10:34:53Z	14	CONTRIBUTOR	https://api.github.com/repos/ARMmbed/mbedtls	        Remove deprecated things	Remove code that is marked with MBEDTLS_DEPREC...
+80515	803398	https://api.github.com/repos/hdarjus/SV-compar...	question	2021-03-05T17:21:05Z	2021-04-01T10:14:42Z	1	NONE	        https://api.github.com/repos/hdarjus/SV-compar...	Not doing a loop in stan-nc	Hello! I'm kind of confused by the loop here i...
+80516	803400	https://api.github.com/repos/zoobc/zoobc-walle...	bug	        2021-04-01T10:40:03Z	2021-04-01T10:43:16Z	1	COLLABORATOR	https://api.github.com/repos/zoobc/zoobc-walle...	Restore account throw error when login with pr...	NaN
+80517	803401	https://api.github.com/repos/achakravarti/arge...	enhancement	2021-01-15T13:48:52Z	2021-04-01T10:46:52Z	0	OWNER	        https://api.github.com/repos/achakravarti/argent	Create HTTP server object	- Manage FastCGI calls - Manage HTTP requ...</pre>
+
+     <pre><code>  # confusion matrix
+  y_true = []
+  y_pred = []
+
+  for row in tqdm(testset.itertuples(), desc="Benchmarking Inference Performance", total=len(testset)):
+    pred = model.predict(preprocess(row))[0][0][9:]
+    y_true.append(row.issue_label)
+    y_pred.append(pred)
+
+  for label in ["bug", "enhancement", "question"]:
+    P_c = sklearn.metrics.precision_score(y_true, y_pred, average=None, labels=[label])[0]
+    R_c = sklearn.metrics.recall_score(y_true, y_pred, average=None, labels=[label])[0]
+    F1_c = sklearn.metrics.f1_score(y_true, y_pred, average=None, labels=[label])[0]
+    print(f"=*= {label} =*=")
+    print(f"precision:\t{P_c:.4f}")
+    print(f"recall:\t\t{R_c:.4f}")
+    print(f"F1 score:\t{F1_c:.4f}")
+    print()
+
+
+  P = sklearn.metrics.precision_score(y_true, y_pred, average='micro')
+  R = sklearn.metrics.recall_score(y_true, y_pred, average='micro')
+  F1 = sklearn.metrics.f1_score(y_true, y_pred, average='micro')
+
+  print("=*= global =*=")
+  print(f"precision:\t{P:.4f}")
+  print(f"recall:\t\t{R:.4f}")
+  print(f"F1 score:\t{F1:.4f}")</code>   =*= bug =*=
+   precision:	0.8306
+   recall:		0.8705
+   F1 score:	0.8501
+
+   =*= enhancement =*=
+   precision:	0.8162
+   recall:		0.8438
+   F1 score:	0.8298
+
+   =*= question =*=
+   precision:	0.6424
+   recall:		0.3650
+   F1 score:	0.4655
+
+   =*= global =*=
+   precision:	0.8150
+   recall:		0.8150
+   F1 score:	0.8150</pre>
+
+
+
+<!--          <p><strong>Java tool competition</strong>: As for recent years, we invite researchers to participate in the competition with their unit test generation tool for <strong><em>Java</em></strong>. Tools will be evaluated against a benchmark with respect to code coverage and mutation score.</p>-->
+
+<!--    <p style="text-align: center;">-->
+<!--      <img src="../img/java.png" title="Java test example" alt="Java test example" />-->
+<!--    </p>-->
+
+<!--    <p><strong>Cyber-physical systems (CPS) testing competition</strong>: In addition to the traditional Java tool competition, we also organize a CPS testing competition on self-driving cars simulation environments. Specifically, in collaboration with the <a href="https://beamng.gmbh/research/ " target="_blank">BeamNG research team</a>, this competition focuses on the generation of scenarios using BeamNG self-driving cars simulator.-->
+<!--    </p>-->
+
+<!--    <p style="text-align: center;">-->
+<!--      <img src="../img/beam-1.png" alt="Beam-NG Visual 1" title="Beam-NG Visual 1" /><br />-->
+<!--      <img src="../img/beam-2.png" alt="Beam-NG Visual 2" title="Beam-NG Visual 2" />-->
+<!--    </p>-->
+
+<!--    <p><strong>For future editions</strong> of the SBST Tool competition (e.g., from 2022) we foresee the addition of a further "Python testing tool competition" where:-->
+<!--      <ul>-->
+<!--        <li>an infrastructure will be provided to generate the tools</li>-->
+<!--        <li>it is conducted in an evaluation setting similar to the one performed for the traditional Java testing tool competition</li>-->
+<!--      </ul>-->
+<!--    </p>-->
+
+<!--    <h3>How to participate in the two competitions?</h3>-->
+
+<!--    <h4>Java tool competition:</h4>-->
+
+<!--    <p>The infrastructure concerning the Java tool competition is available on GitHub and can also be tried using Docker: <a href="https://github.com/JUnitContest/junitcontest" target="_blank">https://github.com/JUnitContest/junitcontest</a>. It is important to note that some changes are expected to the infrastructure during the end of 2020 and during the beginning of 2021.</p>-->
+
+<!--    <p>To participate:-->
+<!--      <ul>-->
+<!--        <li>notify the organizers by sending an email to Sebastiano Panichella, Fiorella Zampetti Alessio Gambi and Vincenzo Riccio (<a href="mailto:fiorella.zampetti@unisannio.it, panc@zhaw.ch, alessio.gambi@uni-passau.de, vincenzo.riccio@usi.ch" target="_blank">fiorella.zampetti@unisannio.it, panc@zhaw.ch, alessio.gambi@uni-passau.de, vincenzo.riccio@usi.ch</a>).</li>-->
+<!--        <li>check out the contest infrastructure and make sure your tool works well within the infrastructure.</li>-->
+<!--      </ul>-->
+<!--    </p>-->
+
+<!--    <h4>CPS testing competition</h4>-->
+
+<!--    <p>The infrastructure concerning the CPS tool competition can be found here: <a href="https://github.com/se2p/tool-competition-av" target="_blank">https://github.com/se2p/tool-competition-av</a>.</p>-->
+
+<!--    <p>To participate:-->
+<!--      <ul>-->
+<!--        <li>-->
+<!--          notify the organizers by sending an email Alessio Gambi, Vincenzo Riccio, Sebastiano Panichella, and Fiorella Zampetti  (<a href="mailto:alessio.gambi@uni-passau.de , vincenzo.riccio@usi.ch, fiorella.zampetti@unisannio.it, panc@zhaw.ch" target="_blank">alessio.gambi@uni-passau.de , vincenzo.riccio@usi.ch, fiorella.zampetti@unisannio.it, panc@zhaw.ch</a>).-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </p>-->
+
+<!--    <h3>Important Dates</h3>-->
+
+<!--    <ul>-->
+<!--      <li>Tool submission: <strong>February 12</strong></li>-->
+<!--      <li>Benchmark results communicated to authors: <strong>March 2</strong></li>-->
+<!--      <li>Submission of camera-ready paper: <strong>March 12</strong></li>-->
+<!--    </ul>-->
+
+<!--            <div class="section">-->
+<!--                <div class="container">-->
+
+
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 ml-auto mr-auto text-left">-->
+
+<!--            <div class="section section-team text-center">-->
+<!--                <div class="container">-->
+<!--                    <h3 class="subtitle">Organizing Committee</h3>-->
+<!--                    <div class="team">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="team-player">-->
+<!--                                    <img src="/img/sebastiano.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
+<!--                                    <h4>Sebastiano Panichella</h4>-->
+<!--                                    <p class="category text-primary">Zurich University of Applied Science (ZHAW)</p>-->
+<!--                                    <a href="https://spanichella.github.io/" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                                </div>-->
 <!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="team-player">-->
-<!--                                <img src="/img/alessio.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
-<!--                                <h4>Alessio Gambi</h4>-->
-<!--                                <p class="category text-primary">Passau University, Germany</p>-->
-<!--                                <a href="https://staff.fim.uni-passau.de/~gambi/" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="team-player">-->
+<!--                                    <img src="/img/alessio.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
+<!--                                    <h4>Alessio Gambi</h4>-->
+<!--                                    <p class="category text-primary">Passau University, Germany</p>-->
+<!--                                    <a href="https://staff.fim.uni-passau.de/~gambi/" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                                </div>-->
 <!--                            </div>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="team-player">-->
-<!--                                <img src="/img/fiorella.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
-<!--                                <h4>Fiorella Zampetti</h4>-->
-<!--                                <p class="category text-primary">University of Sannio</p>-->
-<!--                                <a href="https://scholar.google.com/citations?user=-qRba7AAAAAJ&hl=it" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                          </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="team-player">-->
+<!--                                    <img src="/img/fiorella.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
+<!--                                    <h4>Fiorella Zampetti</h4>-->
+<!--                                    <p class="category text-primary">University of Sannio</p>-->
+<!--                                    <a href="https://scholar.google.com/citations?user=-qRba7AAAAAJ&hl=it" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                                </div>-->
 <!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="team-player">-->
-<!--                                <img src="/img/vincenzo.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
-<!--                                <h4>Vincenzo Riccio</h4>-->
-<!--                                <p class="category text-primary">University of Lugano</p>-->
-<!--                                <a href="https://search.usi.ch/en/people/39b5978277864981b53183b0c8e7660b/riccio-vincenzo" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="team-player">-->
+<!--                                    <img src="/img/vincenzo.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">-->
+<!--                                    <h4>Vincenzo Riccio</h4>-->
+<!--                                    <p class="category text-primary">University of Lugano</p>-->
+<!--                                    <a href="https://search.usi.ch/en/people/39b5978277864981b53183b0c8e7660b/riccio-vincenzo" class="btn btn-primary btn-icon btn-round"><i class="fa fa-id-card-o"></i></a>-->
+<!--                                </div>-->
 <!--                            </div>-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
+<!--              </div>-->
 <!--            </div>-->
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 
 
 <!--
