@@ -99,7 +99,7 @@
       <div class="content-center">
         <h1 class="title">NLBSE 2022</h1>
         <div class="text-center">
-           <h5>The 1st International Workshop on <br> Natural Language-based Software Engineering</h5>
+           <h5>The 1st Intl. Workshop on Natural Language-based Software Engineering</h5>
             <h5>Co-located with <a href="https://conf.researchr.org/home/icse-2022" style="color:white">ICSE 2022</a></h5>
     <h5>May 2022</h5>
 <!--    <a href="" class="btn btn-primary btn-icon btn-round"><i class="fa fa-facebook-square"></i></a>-->
@@ -119,47 +119,71 @@
 
                             <h2 class="title">Tool Competition</h2>
                               <h3>Introduction</h3>
-                              <p>This year, we are pleased to announce the first edition of the tool competition on issue report classification. The competition has the goal to provide a more accurate automated issue labeling tool that will significantly
-                              improve issue management.
+                              <p>NLP-based approaches and tools have been proposed to improve the efficiency of software engineers, processes, and products, by automatically processing natural language artifacts (issues, emails, commits, etc.).</p>
 
-                              <p>For <b>issue report classification competition</b>, we provide a dataset encompassing more than 700k labeled issue reports extracted from real open-source projects. You are invited to leverage this huge dataset for evaluating your issue report classification approaches and compare the achieved results against a proposed baseline tool.
+                              <p>We believe that the availability of accurate tools is becoming increasingly necessary to improve Software Engineering (SE) processes. One important process is issue management and prioritization where developers have to understand, classify, prioritize, assign, etc. incoming issues reported by end-users and developers.</p>
 
-                              <h3>How to participate?</h3>
+							  <p>This year, we are pleased to announce the first edition of the NLBSE’22 tool competition on <b>issue report classification</b>, an important task in issue management and prioritization.</p>
 
-                              <p>The detailed information concerning the issue report classification competition is available here: <a href="https://colab.research.google.com/drive/1ymUYvAJoVbXZhinypaFZTfj0Q69g3rTp?usp=sharing#scrollTo=SRkihj8Keex5"> https://colab.research.google.com/drive/</a>
+							  <p>For the competition, we provide a dataset encompassing more than 700k labeled issue reports (as bugs, enhancements, and questions) extracted from real open-source projects. You are invited to leverage this dataset for evaluating your classification approaches and compare the achieved results against a proposed baseline approach (based on FastText).</p>
 
-                              <p> To participate:
-                              <ul>
-                                  <li>notify the organizers by sending an email to Oscar Chaparro, Rafael Kallis(<a href="mailto: oscarch@wm.edu, rk@rafaelkallis.com">oscarch@wm.edu,rk@rafaelkallis.com</a>)</li>
-                              </ul>
-                            <h3>Overview</h3>
-                            <p>Participants must train a multi-label classifier using the provided training set (see the *<a href="https://colab.research.google.com/drive/1ymUYvAJoVbXZhinypaFZTfj0Q69g3rTp?usp=sharing#scrollTo=SRkihj8Keex5">colab note</a>* for more information about the dataset).</p>
-                            <p>Write a paper report where you describe (at minimum) your approach, data processing, tuning procedure, results, and a link to your code/tool.</p>
-                            <ul>
-                                <li> Source code of training and evaluation pipeline must be open source for acceptance.</li>
-                                <li>Consider re-using the provided infrastructure (on a *<a href="https://colab.research.google.com/drive/1ymUYvAJoVbXZhinypaFZTfj0Q69g3rTp?usp=sharing#scrollTo=SRkihj8Keex5">colab notebook</a>*) to implement/tune your approach</li>
+                              
+                            <h3>Competition overview</h3>
+							
+							<p>We created a  <a href="https://colab.research.google.com/drive/1ymUYvAJoVbXZhinypaFZTfj0Q69g3rTp?usp=sharing">Colab notebook</a> with detailed information about the competition (data, baseline approach, paper submission, paper format, etc.). </p>
+
+							<p>If you want to participate, you must:</p>
+							<ul>
+								<li>Train and tune a multi-label classifier using the provided training set (more details below)</li>
+								<li>Evaluate your classifier on the provided test set</li>
+								<li>Write a paper (4 pages max.) describing:</li>
+									<ul>
+									   <li>The architecture and details of the classifier</li>
+									   <li>The procedure used to pre-process the data</li>
+									   <li>The procedure used to tune the classifier on the training set</li>
+									   <li>The results of your classifier on the test set</li>
+									   <li>Additional info.: provide a link to your code/tool with proper documentation on how to run it</li>
+									</ul>
+								<li>Submit the paper by emailing the tool competition organizers (see below)</li>
                             </ul>
-                            <p>Submit the paper via email to the tool competition organizers.</p>
-                            <p>Submissions will be evaluated on a test set (released by the workshop date) and are ranked by the highest F1 score.</p>
-                            <p>The submission with the highest F1 score will be the winner of the competition.</p>
 
+							<p>Submissions will be evaluated and accepted based on correctness and reproducibility, defined by the following criteria:</p>
+								<ul>
+								   <li>Clarity and detail of the paper content</li>
+								   <li>Availability of the code/tool, released as open-source</li>
+								   <li>Correct training/tuning/evaluation of your code/tool on the provided data</li>
+								   <li>Clarity of the code documentation</li>
+								</ul>
+
+							<p>The accepted submissions will be published at the workshop proceedings.</p>
+
+							<p>The submissions will be ranked based on the F1 score achieved by the proposed classifiers on the test set, as indicated in the papers.</p>
+
+							<p>The submission with the highest F1 score will be the winner of the competition.</p>
+
+							<h3>How to participate?</h3>
+
+                              <p>  Email your paper to Oscar Chaparro (<a href="mailto:oscarch@wm.edu">oscarch@wm.edu</a>) and Rafael Kallis (<a href="mailto:rk@rafaelkallis.com">rk@rafaelkallis.com</a>) by the submission deadline.</p>
 
                         </div>
                         <div class="col-md-4">
                             <h4  class="subsection">Important Dates</h4>
 
-                            <h6 class="text-primary">Tool Submission</h6>
+                            <h6 class="text-primary">Paper/tool submission</h6>
                             <p><b>February 21, 2022</b></p>
                             <!--                            <h6 class="text-primary">Competition Report Deadline</h6>-->
                             <!--                            <p><b>February 21, 2022</b></p>-->
-                            <h6 class="text-primary">Benchmark results communicated to authors</h6>
+                            <h6 class="text-primary">Acceptance and competition results notification</h6>
                             <p><b>March 4, 2022</b></p>
                             <!--                            <h6 class="text-primary">Competition Author Notification</h6>-->
                             <!--                            <p><b>March 4, 2022</b></p>-->
-                            <h6 class="text-primary">Submission of Camera-Ready papers</h6>
+                            <h6 class="text-primary">Camera-ready paper submission</h6>
                             <p><b>March 18, 2022</b></p>
                             <!--                            <h6 class="text-primary">Date of Workshop</h6>-->
                             <!--                            <p><b>TBD</b></p>-->
+							
+							All dates are Anywhere on Earth (AoE).
+
                 </div>
 
 
