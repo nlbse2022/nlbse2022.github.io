@@ -53,8 +53,8 @@
 .sidebar-collapse .navbar-collapse:before {
     /*background: linear-gradient(#1baedb 0%, #000 80%);*/
     background: #DBE3EA;
-    /*opacity: 0.76;*/
-    /*filter: alpha(opacity=76);*/
+    opacity: 0.76;
+    filter: alpha(opacity=76);
     display: block;
     content: "";
     position: absolute;
