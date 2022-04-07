@@ -274,8 +274,11 @@ table {
     /*border-collapse: collapse*/
     border-collapse: separate;
     border-spacing: 0px 10px;
+    margin-left: 30px;
 }
-
+table.time{
+    width: 30px;
+}
 caption {
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -459,6 +462,7 @@ h5 {
 h6 {
     font-size: 1rem
 }
+
 
 .lead {
     font-size: 1.25rem;

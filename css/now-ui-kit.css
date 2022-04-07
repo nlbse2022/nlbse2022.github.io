@@ -2158,7 +2158,8 @@ h5, .h5 {
 h6, .h6 {
   font-size: 1em;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #1da2ff}
 
 p {
   line-height: 1.61em; }
